@@ -5,7 +5,7 @@
 title = FruitsClassificationApp
 
 # (str) Package name
-package.name = myapp
+package.name = org.test.fruitsclassificationapp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -77,6 +77,7 @@ osx.kivy_version = 1.9.1
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
 
+# (str) Permissions
 android.permissions=READ_EXTERNAL_STORAGE
 
 # (string) Presplash background color (for android toolchain)
@@ -104,13 +105,13 @@ android.permissions=READ_EXTERNAL_STORAGE
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 31
+android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
 #android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 33
 
 # (str) Android NDK version to use
 #android.ndk = 23b
