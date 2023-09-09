@@ -1,0 +1,19 @@
+<ImageClassifierApp>:
+    orientation: 'vertical'
+    spacing: 10
+
+    TextInput:
+        id: folder_input
+        hint_text: "Enter folder path or tap 'Select Folder'"
+
+    Button:
+        text: "Select Folder"
+        on_release: app.select_folder(self)
+
+    Label:
+        id: result_label
+
+    Button:
+        text: "Predict"
+        on_release: app.predict_images_in_folder(self)
+
