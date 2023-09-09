@@ -45,19 +45,18 @@ class ImageClassifierApp(App):
     def predict_images_in_folder(self, instance):
         folder_path = self.folder_input.text
         if folder_path and os.path.exists(folder_path):
-            folder_result_label = Label()
-            total_count = 0
-            correct_count = 0
+            self.result_label.text = ""
 
-            for root, dirs, files in os.walk(folder_path):
-                for subfolder in dirs:
-                    subfolder_path = os.path.join(root, subfolder)
+            for subfolder in os.listdir(folder_path):
+                subfolder_path = os.path.join(folder_path, subfolder)
+                if os.path.isdir(subfolder_path):
+                    subfolder_total_count = 0
                     subfolder_correct_count = 0
 
                     for image_filename in os.listdir(subfolder_path):
                         if image_filename.lower().endswith((".jpg", ".jpeg", ".png")):
                             image_path = os.path.join(subfolder_path, image_filename)
-                            total_count += 1
+                            subfolder_total_count += 1
 
                             input_details = self.model.get_input_details()
                             output_details = self.model.get_output_details()
@@ -75,11 +74,12 @@ class ImageClassifierApp(App):
                             if true_label == predicted_label:
                                 subfolder_correct_count += 1
 
-                    folder_result_label.text += f"Subfolder: {subfolder_path}, Total Images: {total_count}, Correct: {subfolder_correct_count}, Incorrect: {total_count - subfolder_correct_count}\n"
-
-                    correct_count += subfolder_correct_count
-
-            self.result_label.text = f"Folder: {folder_path}, Total Images: {total_count}, Correct: {correct_count}, Incorrect: {total_count - correct_count}\n" + folder_result_label.text
+                    self.result_label.text += (
+                        f"Subfolder: {subfolder}, "
+                        f"Total Images: {subfolder_total_count}, "
+                        f"Correct: {subfolder_correct_count}, "
+                        f"Incorrect: {subfolder_total_count - subfolder_correct_count}\n"
+                    )
         else:
             self.result_label.text = "Please enter a valid folder path."
 
