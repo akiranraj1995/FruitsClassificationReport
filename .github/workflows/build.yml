@@ -19,6 +19,8 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
+        architecture: x64
+        node: 16
         
     - name: Install Kivy dependencies
       run: python -m pip install kivy[base] kivy_examples --no-cache-dir
