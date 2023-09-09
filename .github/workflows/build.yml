@@ -1,11 +1,11 @@
-name: CI
+name: Build Kivy APK
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
-
   build:
 
     runs-on: ubuntu-22.04
