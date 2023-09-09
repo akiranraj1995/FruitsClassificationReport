@@ -13,7 +13,9 @@ jobs:
     steps:
 
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
+      with:
+        node-version: 16  # Explicitly set Node version to 16
 
     - name: Set up Node 16
       uses: actions/setup-node@v2
@@ -34,7 +36,7 @@ jobs:
     - name: Build debug APK
       uses: ArtemSBulgakov/buildozer-action@v1
       with: 
-        buildozer_version: v1.5.0  # Replace with the desired buildozer version
+        buildozer_version: v1.2.0  # Replace with the desired buildozer version
         command: buildozer android debug deploy
         
     - name: Copy logcat logs
