@@ -2,7 +2,7 @@
 
 
 # (str) Title of your application
-title = Calculator Application
+title = FruitsClassificationApp
 
 # (str) Package name
 package.name = myapp
@@ -30,7 +30,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 1.0
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -76,6 +76,8 @@ osx.kivy_version = 1.9.1
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
+
+android.permissions=READ_EXTERNAL_STORAGE
 
 # (string) Presplash background color (for android toolchain)
 # Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
