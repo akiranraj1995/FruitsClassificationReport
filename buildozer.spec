@@ -38,7 +38,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.7.6,hostpython3==3.7.6,kivy,pillow,kivy_garden
+requirements = python3==3.7.6,hostpython3==3.7.6,kivy=2.0.0,pillow,kivy_garden,tensorflow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -78,7 +78,7 @@ osx.kivy_version = 1.9.1
 fullscreen = 0
 
 # (str) Permissions
-android.permissions=READ_EXTERNAL_STORAGE
+android.permissions=READ_EXTERNAL_STORAGE,INTERNET
 
 # (string) Presplash background color (for android toolchain)
 # Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
@@ -105,13 +105,13 @@ android.permissions=READ_EXTERNAL_STORAGE
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 32
+android.api = 28
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
+android.minapi = 21
 
 # (int) Android SDK version to use
-android.sdk = 32
+android.sdk = 28
 
 # (str) Android NDK version to use
 #android.ndk = 23b
